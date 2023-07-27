@@ -1,0 +1,31 @@
+
+---+la baslaya bilmez---
+--Variable sayi ile baslaya bilmez--
+--cursors constanst tanimlana bilir---
+--header--
+--declare--
+--[execution]--
+--[exception]--
+
+set serveroutput on
+declare
+v_name varchar(10);
+v_surname varchar(100);
+
+begin
+    v_name:='Khumar';
+    v_surname:='Mirzayeva';
+    dbms_output.put_line ('Adim:' || v_name || ' ' || 'Soyad?m:' || v_surname);
+end;
+
+declare
+v_sayi1 number(5):=123;
+v_sayi2 number(5,2):=123.45;
+v_sayi3 number (5,3):=12.456;
+
+begin
+    dbms_output.put_line('sayi1:' || v_sayi1);
+    dbms_output.put_line('sayi2:' || v_sayi2);
+    dbms_output.put_line('sayi3:' || v_sayi3);
+end;
+
