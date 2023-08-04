@@ -1,0 +1,55 @@
+**Open-Format Questions:**
+
+1. Scalar Data Types:
+**Open Format:** Explain the purpose of the BOOLEAN data type in PL/SQL and provide a practical example of how it can be used in a conditional statement.
+
+
+----Boolean data tipləri Plsql-də TRUE,False və ya 0 və 1-lə işlənən data tipi kateqoriyasıya aiddir. Məsələn, user tərəfindən yaradılan core banking cədvəlində İsresident Sütunu var ki,
+bu daxil olan hər yeni müştərinin resident olub olmadığı yoxlayır bu halda, İsresident sütunu boolean tipində olur və insert prosesində və ya excetion prosesində ona 1,0 dəyərləri
+mənimsədilir.Bu data tip eyni zamanda, dövr əməliyyatlarında və müəyyən şərtə malik olan procedurlar daxilində işlədilir----
+DECLARE
+  isStudent BOOLEAN := TRUE;
+  isEmployee BOOLEAN := FALSE;
+BEGIN
+  IF isStudent THEN
+    DBMS_OUTPUT.PUT_LINE('This person is a student.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('This person is not a student.');
+  END IF;
+
+  IF isEmployee THEN
+    DBMS_OUTPUT.PUT_LINE('This person is an employee.');
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('This person is not an employee.');
+  END IF;
+END;
+/
+
+
+2. Composite Data Types:
+**Open Format:** Create a Nested Table in PL/SQL named `employee_skills` to store the skills of five employees. 
+Populate the Nested Table with employee names and their respective skills. Display the contents of the Nested Table.
+
+
+
+3. Reference Data Types:
+**Open Format:** Describe the differences between the REF CURSOR and the REF data types in PL/SQL and provide specific use cases where each type would be more suitable.
+
+Ref cursor , dinamik sql sorğusunun nəticələrini saxlamaq üçün istifadə olunun bir məlumat tipidir.Ref data tipi isə bir cədvəldəki sütunu, massivdəki eləmentini təmsil edən data tipidir
+Ref data tipi cədvəllər arasında əlavə qurmaq üçün də istifadə edilə bilər.
+
+
+4. LOB Data Types:
+---**Open Format:** Explain the purpose of the CLOB data type in PL/SQL and provide a real-world use case where it would be beneficial.
+CLOB data tipi böyük həcmli verilənlərin saxlandığı data tipdir.Bunlara text document-ləri,XML data və s aiddir 4GB-a qədər olan böyük həcmli verilənləri saxlaya bilir.Nümunə olaraq şirkətlərin 
+bazasını götürə bilərik ki, biz bilirik ki, şirkətə yeni işçi daxil olduqda onun bütun məlumatları bazada saxlanılır.Hansı ki, bu bazada əməkdaşın foto şəkli, bundan əvvəlki iş
+yerləri haqqında məlumat olmalıdır və nəzərə alsaq ki, biz bu qədər verilənləri ənənəvi olaraq istifadə etdiyimiz data tiplər (char,varchar2,number)vasitəsilə saxlaya bilmirik---
+
+5. Collection Data Types:
+**Open Format:** Compare and contrast VARRAY, Nested Table, and Associative Array (PL/SQL Table) in terms of their usage, limitations, and scenarios where each would be more appropriate.
+
+
+---Nested Table tipli data tipləri nizamsız kolleksiya kimi düşünə bilərik.Biz onları gördüyümüz işdən asılı olaraq ölçüsünü böyüdə və ya kiçildə bilərik.
+Sabit ölçüsü olmaya array tiplidir.Varray massiv strukturuna malikdir.Nested Table-dan fərqli olaraq yaradıldıqdan sonra ölçüsünü dəyişmək olmaz.Konstrukturla işə salınır və indeks formatıyla birlikdə ona dəyər daxil 
+edə bilərik.Associative massin digər növlərindən fərqlənir.O VARRAY-larda olduğu kimi ardıcıl tam ədədlərlə deyil, unikal 
+açarla indeksləşdirilmiş elementlər toplusudur. ----
