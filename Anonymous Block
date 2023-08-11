@@ -1,0 +1,71 @@
+Task 1-Task: Write an anonymous block that declares a variable v_greeting and initializes it with "Hello, World!". The block should then output the value of v_greeting.
+---DECLARE
+    v_greeting VARCHAR2(50) := 'Hello, World!';
+BEGIN
+    dbms_output.put_line(v_greeting);
+END;----
+
+Task2-Task: Declare two number variables, v_num1 and v_num2. Initialize v_num1 with 10. Within the block, assign v_num2 the value of v_num1 multiplied by 5 and then output it.
+---DECLARE
+    v_num1 NUMBER := 10;
+    v_num2 NUMBER;
+BEGIN
+    v_num2 := v_num1 * 5;
+    DBMS_OUTPUT.PUT_LINE('v_num2: ' || v_num2);
+END;---
+
+Task3-Task: Declare two variables, v_length and v_width, and initialize them with 5 and 10 respectively. Calculate the area of a rectangle using these and output the result.
+DECLARE
+    v_length NUMBER := 5;
+    v_width NUMBER := 10;
+    v_area NUMBER;
+BEGIN
+    v_area := v_length * v_width;
+    DBMS_OUTPUT.PUT_LINE('Area of the rectangle: ' || v_area);
+END;
+
+Task4-Task: Declare a date variable v_today and initialize it with the current date. Add 7 days to this date and output the result.
+---
+DECLARE
+    v_today DATE;
+    v_next_seven_day DATE;
+BEGIN
+    v_today := SYSDATE;
+    v_next_seven_day := v_today + 7;
+    DBMS_OUTPUT.PUT_LINE('Today''s date: ' || TO_CHAR(v_today, 'DD-MON-YYYY'));
+    DBMS_OUTPUT.PUT_LINE('Date after 7 days: ' || TO_CHAR(v_next_seven_day, 'DD-MON-YYYY'));
+END;---
+
+Task 5-Task: Declare two string variables, v_firstName and v_lastName. Initialize them with your first and last name. Concatenate them to display a full name and then output it.
+---DECLARE
+    v_firstName VARCHAR2(50) := 'Khumar';
+    v_lastName VARCHAR2(50) := 'Mirzayeva';
+    v_fullName VARCHAR2(100);
+BEGIN
+    v_fullName := v_firstName || ' ' || v_lastName;
+    DBMS_OUTPUT.PUT_LINE('Full Name: ' || v_fullName);
+END;---
+
+Task 6-Task: Declare a number variable v_age. If v_age is greater than 18, print "Adult". Otherwise, print "Minor".
+---Set serveroutput on
+DECLARE
+    v_age NUMBER := 20; 
+    
+BEGIN
+    IF v_age > 18 THEN
+        DBMS_OUTPUT.PUT_LINE('Adult');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Minor');
+    END IF;
+END;
+
+Task 7-Task: Declare a number variable v_counter and initialize it with 1. Write a loop that outputs the numbers from 1 to 5 using this variable.
+DECLARE
+    v_counter NUMBER := 1;
+BEGIN
+    FOR v_counter IN 1..5 LOOP
+        DBMS_OUTPUT.PUT_LINE(v_counter);
+    END LOOP;
+END;
+
+Task 8-Task: Declare a number variable v_dividend and v_divisor. Initialize v_divisor with 0. Try dividing v_dividend by v_divisor and handle any exceptions to print "Cannot divide by zero".
