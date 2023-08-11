@@ -1,0 +1,31 @@
+Task 1 Write an anonymous block that checks if v_salary of employee with employee_id 105 is greater than 5000. If true, print "High Salary," otherwise print "Low Salary."
+DECLARE
+   v_salary NUMBER;
+BEGIN
+   SELECT salary INTO v_salary FROM employees WHERE employee_id = 105;
+   IF v_salary > 5000 THEN
+      DBMS_OUTPUT.PUT_LINE('High Salary');
+   ELSE
+      DBMS_OUTPUT.PUT_LINE('Low Salary');
+   END IF;
+END;
+
+
+Task 2 
+
+DECLARE
+   v_start_date DATE;
+   v_end_date DATE;
+   v_duration_years NUMBER;
+BEGIN
+   SELECT start_date, end_date INTO v_start_date, v_end_date
+   FROM job_history
+   WHERE employee_id = 103;
+   v_duration_years := (v_end_date - v_start_date) / 365;
+   DBMS_OUTPUT.PUT_LINE('Duration in years: ' || v_duration_years);
+EXCEPTION
+   WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('Employee job history not found');
+END;
+
+Task 3
