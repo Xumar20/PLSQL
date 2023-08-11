@@ -69,3 +69,26 @@ BEGIN
 END;
 
 Task 8-Task: Declare a number variable v_dividend and v_divisor. Initialize v_divisor with 0. Try dividing v_dividend by v_divisor and handle any exceptions to print "Cannot divide by zero".
+Set serveroutput on
+DECLARE
+    v_dividend NUMBER := 5;
+    v_divisor  NUMBER := 0;
+BEGIN
+    dbms_output.put_line('The result is:' || v_dividend / v_divisor);
+EXCEPTION
+    WHEN zero_divide THEN
+        dbms_output.put_line('Cannot divide by zero');
+END;
+
+
+Task 9
+Declare a string variable v_text and initialize it with "oracle". Convert the string to uppercase and then output the result.
+DECLARE
+    v_text VARCHAR2(30) := 'oracle';
+BEGIN
+    dbms_output.put_line(upper(v_text));
+END;
+
+Task 10
+Write an anonymous block that declares a number variable v_outerVar and initializes it with 100. Within this block, 
+declare another nested anonymous block that declares a variable v_innerVar and initializes it with 200. Output both variables from the inner block.
