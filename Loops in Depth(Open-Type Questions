@@ -1,0 +1,11 @@
+1. Explain the difference between a WHILE loop and a FOR loop in Oracle PL/SQL.
+
+2. How would you use the CONTINUE statement within a loop? Provide an example.
+3. Write a PL/SQL block that uses a numeric FOR loop to display all even numbers between 1 and 20.
+4. When would you use a cursor FOR loop instead of a regular FOR loop in PL/SQL? Provide a scenario.
+5. Describe the use of loop labels in PL/SQL and how they can be helpful in nested loops.
+6. Write a PL/SQL block that uses a loop to calculate the factorial of a given number.
+7. What are some best practices for writing efficient and maintainable loops in Oracle PL/SQL?
+8. Explain how you can emulate a REPEAT UNTIL loop using a simple loop in PL/SQL.
+9. When should you use a WHILE loop instead of a numeric FOR loop? Provide an example.
+10. Describe the advantages of using set-based operations with SQL statements instead of using loops for data manipulation in Oracle PL/SQL.
