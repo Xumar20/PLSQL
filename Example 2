@@ -1,0 +1,50 @@
+CREATE TABLE Employees1 (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR2(50),
+    last_name VARCHAR2(50),
+    position VARCHAR2(100),
+    department VARCHAR2(100),
+    hire_date DATE
+);
+
+CREATE OR REPLACE PROCEDURE AddEmployee(
+    p_first_name IN VARCHAR2,
+    p_last_name IN VARCHAR2,
+    p_position IN VARCHAR2,
+    p_department IN VARCHAR2,
+    p_hire_date IN DATE
+) AS
+BEGIN
+    INSERT INTO Employees1 (first_name, last_name, position, department, hire_date)
+    VALUES (p_first_name, p_last_name, p_position, p_department, p_hire_date);
+    
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        ROLLBACK;
+        RAISE;
+END AddEmployee;
+/
+CREATE OR REPLACE PROCEDURE UpdateEmployee(
+    p_employee_id IN NUMBER,
+    p_first_name IN VARCHAR2,
+    p_last_name IN VARCHAR2,
+    p_position IN VARCHAR2,
+    p_department IN VARCHAR2,
+    p_hire_date IN DATE
+) AS
+BEGIN
+    UPDATE Employees1
+    SET first_name = p_first_name,
+        last_name = p_last_name,
+        position = p_position,
+        department = p_department,
+        hire_date = p_hire_date
+    WHERE employee_id = p_employee_id;
+    
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        ROLLBACK;
+        RAISE;
+END UpdateEmployee;
